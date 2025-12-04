@@ -105,27 +105,29 @@ const starWarsCharacters = [
   Crea una variabile chiamata "charactersNames" e assegnale un array vuoto
 */ let charactersNames = [];
 
-/* ESERCIZIO 2 Uti
- Ulizzando un ciclo for, cicla l'array "starWarsCharacters".
+/* ESERCIZIO 2 
+ Utilizzando un ciclo for, cicla l'array "starWarsCharacters".
   Dovrai accedere alla proprietà "name" di ogni oggetto in esso contenuto, e inserirla nell'array "charactersNames" creato precedentemente.
   Come risultato dovresti ottenere qualcosa di simile: ["Luke Skywalker", "C-3PO", "R2-D2", etc..]
 */
 
-for (let x = 0; x < starWarsCharacters.length; x++) {
-  charactersNames.push(starWarsCharacters[x].name);
+for (i = 0; i < starWarsCharacters.length; i++) {
+  charactersNames.push(starWarsCharacters[i].name);
 }
 
 console.log(charactersNames);
 
 /* ESERCIZIO 3
   Seguendo i passaggi precedenti crea un nuovo array chiamato "femaleCharacters" e inserisci al suo interno tutti gli oggetti femminili.
-*/ const femaleCharacters = [];
+*/
+const femaleCharacters = [];
 
-for (let x = 0; x < starWarsCharacters.length; x++) {
-  if (starWarsCharacters[x].gender === "female") {
-    femaleCharacters.push(starWarsCharacters[x]);
+for (i = 0; i < starWarsCharacters.length; i++) {
+  if (starWarsCharacters[i].gender === "female") {
+    femaleCharacters.push(starWarsCharacters[i]);
   }
 }
+console.log(femaleCharacters);
 
 /* ESERCIZIO 4
   Crea un oggetto "eyeColor" che abbia le seguenti proprietà: blue, yellow, brown, red, blue-gray.
@@ -156,6 +158,14 @@ for (let x = 0; x < starWarsCharacters.length; x++) {
 /* ESERCIZIO 8
   Usa un for loop per cambiare il valore della proprietà "gender" di alcuni personaggi dal valore "n/a" a "robot" (Tip: puoi effettuare la riassegnazione del valore corrispondente o creare un nuovo array)
 */
+for (let i = 0; i < starWarsCharacters.length; i++) {
+  const character = starWarsCharacters[i];
+  console.log(character);
+  if (character.gender === "n/a") {
+    console.log(character.name, "said yes");
+    character.gender = "robot;";
+  }
+}
 
 /* --EXTRA-- ESERCIZIO 9
   Utilizzando gli elementi presenti nell'array "femaleCharacters" rimuovi dall'array "charactersNames" le stringhe corrispondenti a personaggi con lo stesso nome.

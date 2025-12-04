@@ -103,7 +103,7 @@ const starWarsCharacters = [
 
 /* ESERCIZIO 1
   Crea una variabile chiamata "charactersNames" e assegnale un array vuoto
-*/ let charactersNames = [];
+*/ let characters = [];
 
 /* ESERCIZIO 2 
  Utilizzando un ciclo for, cicla l'array "starWarsCharacters".
@@ -112,14 +112,16 @@ const starWarsCharacters = [
 */
 
 for (i = 0; i < starWarsCharacters.length; i++) {
-  charactersNames.push(starWarsCharacters[i].name);
+  const character = starWarsCharacters[i];
+  console.log(character.name);
+  charactersNames.push(starWarsCharacters[i].name); //(starWarsCharacters[i]) è un ELEMENTO DINAMICO
 }
-
 console.log(charactersNames);
 
 /* ESERCIZIO 3
   Seguendo i passaggi precedenti crea un nuovo array chiamato "femaleCharacters" e inserisci al suo interno tutti gli oggetti femminili.
 */
+//codice dinamico
 const femaleCharacters = [];
 
 for (i = 0; i < starWarsCharacters.length; i++) {
@@ -138,10 +140,42 @@ console.log(femaleCharacters);
   Utilizza uno switch statement per inserire uno ad uno gli oggetti dei personaggi di "starWarsCharacters" negli array relativi al colore degli occhi precedentemente creati.
   Ogni personaggio dovrà finire nell'array corrispondente al suo colore degli occhi (al valore della sua proprietà "eye_color").
 */
-
+for (let i = 0; i < starWarsCharacters.length; i++)
+  switch (character.eye_color) {
+    case "blue":
+      eyeColor.blue.push(character);
+      console.log(eyeColor.blue);
+      break;
+       case "yellow":
+      eyeColor.blue.push(character);
+      console.log(eyeColor.yellow);
+      break;
+       case "brown":
+      eyeColor.blue.push(character);
+      console.log(eyeColor.brown);
+      break;
+       case "red":
+      eyeColor.blue.push(character);
+      console.log(eyeColor.red);
+      break;
+       case "blue-gray":
+      eyeColor.blue.push(character);
+      console.log(eyeColor.);
+      break;
+  }
 /* ESERCIZIO 6
   Usa un while loop per calcolare la massa totale dell'equipaggio. Salvala in una variabile chiamata "crewMass".
 */
+let crewMass = 0;
+let index = 0;
+while (index <starWarsCharacters.length) {
+    const character= starWarsCharacters[index]
+    console.log(character.mass)
+    crewMass = crewMass + character.mass;
+    // crewMass +=character.mass;
+    index++
+}
+console.log("TOTALE MASSA", crewMass);
 
 /* ESERCIZIO 7
   Crea uno if/else statement per rivelare la tipologia di carico, utilizzando la massa totale, di un'ipotetica astronave contenente i personaggi dell'array "starWarsCharacters".
@@ -154,6 +188,12 @@ console.log(femaleCharacters);
 
   Una volta fatto, modifica la massa di qualche elemento dell'equipaggio e vedi se riesci ad ottenere un messaggio diverso.
 */
+if(crewMass > 1000) {
+    console.log("DANGER OVERLOAD ALERT: escape from the ship now!");
+    else if (crewMass > 900) {
+        console.log("")
+    }
+}
 
 /* ESERCIZIO 8
   Usa un for loop per cambiare il valore della proprietà "gender" di alcuni personaggi dal valore "n/a" a "robot" (Tip: puoi effettuare la riassegnazione del valore corrispondente o creare un nuovo array)
